@@ -1,7 +1,7 @@
 import Pet from "./Pet";
 
 export default function PetList({ pets }) {
-  console.log("pets are", pets);
+  // console.log("pets are", pets);
   return (
     <div className="search">
       {!pets.length ? (
