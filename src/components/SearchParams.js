@@ -4,19 +4,17 @@ import useBreedList from "./useBreedList";
 
 const ANIMALS = ["dog", "bird", "cat", "reptile"];
 
-export default function SearchParams() {
+export default function SearchParams({ pets, setPets }) {
   const [location, setLocation] = useState("Denver, CO");
   const [animal, setAnimal] = useState("dog");
   const [breed, setBreed] = useState("");
   // replace `const breeds = [];`
   const [breeds] = useBreedList(animal);
-  const [pets, setPets] = useState([]);
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
   };
   const handleAnimalSelect = (event) => {
-    console.log(event.target.value);
     setAnimal(event.target.value);
   };
 
@@ -33,7 +31,7 @@ export default function SearchParams() {
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
     const data = await res.json();
-    console.log("data is ", data);
+    // console.log("data is ", data);
     setPets(data.pets);
   }
   return (
@@ -47,7 +45,6 @@ export default function SearchParams() {
       >
         <label htmlFor="location">
           Location
-          {/* Nest input in label for better accessibility */}
           <input
             id="location"
             value={location}
@@ -55,7 +52,7 @@ export default function SearchParams() {
             onChange={handleLocationChange}
           ></input>
         </label>
-        {/* Dropdown */}
+
         <label htmlFor="animal">Animal</label>
         <select id="animal" value={animal} onChange={handleAnimalSelect}>
           <option />

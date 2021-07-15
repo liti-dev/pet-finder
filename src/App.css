@@ -5,10 +5,10 @@
 
 body {
   background-color: #81a69b;
-  background-image: url("./bg.png");
-  background-size: contain;
+  background-image: url('./bg.png');
+  background-size: cover;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-params {
@@ -76,7 +76,11 @@ body {
   float: left;
   margin: 0px 20px 0px 10px;
 }
-
+.image-details {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
 .pet h1 {
   white-space: nowrap;
   font-weight: normal;
@@ -91,7 +95,7 @@ body {
 header > a,
 #root > div > h1 {
   display: inline-block;
-  background-image: url("./pawlogo.png");
+  background-image: url('./pawlogo.png');
   background-repeat: no-repeat;
   width: 12rem;
   height: 2.5rem;
@@ -139,6 +143,12 @@ header {
 .details h2 {
   text-align: center;
   margin: 5px 0px 20px 0px;
+}
+.details-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel {
